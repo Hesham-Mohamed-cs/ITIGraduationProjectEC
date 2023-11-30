@@ -1,0 +1,24 @@
+﻿#cartXMark {
+    cursor: pointer;
+    transition: 300ms;
+}
+
+    #cartXMark:hover {
+        text-decoration: underline;
+        color: red;
+        transition: 300ms;
+    }
+
+
+.counter-button {
+    padding: 8px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.counter-number {
+    font-size: 18px;
+    margin: 0 10px;
+}

@@ -1,0 +1,67 @@
+﻿body {
+    background-image: url(/HomeImages/bg/bg4.jpg) !important;
+    background-size: cover;
+}
+.content {
+    background-color: #80808094 !important;
+    padding-bottom: 30px !important;
+}
+
+.allComments {
+    background-color: white !important;
+}
+
+.moreProds {
+    background-color: white !important;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+.hide{
+    visibility:hidden
+}
+
+.navbar {
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.card:hover .hide{
+    visibility:visible
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    scale: 1.03;
+}
+
+.input::placeholder{
+    color:grey
+}
+
+
+.star {
+    color: #ffc107; /* Change this to the desired color */
+    font-size: 20px; /* Adjust the size of the stars */
+}
+
+.rated {
+    color: #ffc107; /* Color for rated stars */
+}
+
+.unrated {
+    color: #ccc; /* Color for unrated stars */
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.rating-value {
+    margin-left: 10px;
+    font-weight: bold;
+}
+

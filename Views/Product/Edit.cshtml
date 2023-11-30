@@ -1,0 +1,106 @@
+﻿@model GraduaitionProjectITI.ViewModel.Products.EditProductViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="model modal-dialog modal-xl position-static d-block bg-body-secondary p-4 " tabindex="-1" role="dialog" id="modalSignin">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content rounded-4 shadow">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+                <h1 class="fw-bold mb-0 fs-2">Edit Product</h1>
+                <img src="~/ProductImages/@Model.ImgPath" class="rounded-4" height="50" width="50" />
+            </div>
+            <div class="modal-body p-5 pt-0">
+
+                <form asp-action="Edit" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <input type="hidden" asp-for="Id" class="form-control" />
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="form-outline">
+                                <label asp-for="Name" class="control-label"></label>
+                                <input asp-for="Name" class="form-control" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <label asp-for="Manufacture" class="control-label"></label>
+                                <input asp-for="Manufacture" class="form-control" />
+                                <span asp-validation-for="Manufacture" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="form-outline">
+                                <label asp-for="ModelNumber" class="control-label"></label>
+                                <input asp-for="ModelNumber" class="form-control" />
+                                <span asp-validation-for="ModelNumber" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <label asp-for="Price" class="control-label"></label>
+                                <input asp-for="Price" class="form-control" />
+                                <span asp-validation-for="Price" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="form-outline">
+                                <label asp-for="Count" class="control-label"></label>
+                                <input asp-for="Count" class="form-control" />
+                                <span asp-validation-for="Count" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <label class="control-label" for="inputGroupFile02">Product Image</label>
+                                <input asp-for="ProductImage" value="@Model.ImgPath" class="form-control" >
+                                <span asp-validation-for="ProductImage" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <label asp-for="CategoryID" class="control-label"></label>
+                    <div class="form-outline mb-4">
+                        <select asp-for="CategoryID" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                        <span asp-validation-for="CategoryID" class="text-danger"></span>
+                    </div>
+
+                    <label asp-for="BrandID" class="control-label"></label>
+                    <div class="form-outline mb-4">
+                        <select asp-for="BrandID" class="form-control" asp-items="ViewBag.BrandId"></select>
+                        <span asp-validation-for="BrandID" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <label asp-for="Details" class="control-label"></label>
+                        <textarea asp-for="Details" class="form-control"></textarea>
+                        <span asp-validation-for="Details" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Edit" class="btn btn-primary" />
+                        <a class="btn btn-outline-secondary" asp-action="Index"> Cancel </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

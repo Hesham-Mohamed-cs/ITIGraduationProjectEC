@@ -1,0 +1,125 @@
+﻿@model GraduaitionProjectITI.Models.Entity.ApplicationUser
+
+@{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<head>
+
+    <style>
+        body {
+            margin-top: 10px;
+        }
+
+        .cardP {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(0,0,0,.125);
+            border-radius: 0.50rem;
+        }
+
+
+        .text-primary {
+            color: #ceaa4d !important;
+        }
+
+        .text-secondary {
+            color: #15395A !important;
+        }
+
+        .font-weight-600 {
+            font-weight: 600;
+        }
+
+        .display-26 {
+            font-size: 1.3rem;
+        }
+
+
+
+        .p-1-9 {
+            padding: 1.9rem;
+        }
+
+        .bg-secondary {
+            background: #15395A !important;
+        }
+
+        .pe-1-9, .px-1-9 {
+            padding-right: 1.9rem;
+        }
+
+        .ps-1-9, .px-1-9 {
+            padding-left: 1.9rem;
+        }
+
+        .pb-1-9, .py-1-9 {
+            padding-bottom: 1.9rem;
+        }
+
+        .pt-1-9, .py-1-9 {
+            padding-top: 1.9rem;
+        }
+
+        .mb-1-9, .my-1-9 {
+            margin-bottom: 1.9rem;
+        }
+
+        .rounded {
+            border-radius: 0.25rem !important;
+        }
+    </style>
+</head>
+<body>
+    <section class="">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-8 mb-4 mb-sm-5">
+                    <div class="cardP card-style1 border-0">
+                        <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6 mb-4 mb-lg-0">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="...">
+                                </div>
+                                <div class="col-lg-6 px-xl-10">
+                                    <div class="bg-secondary d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded">
+
+                                        <h3 class="h2 text-white mb-0">@(Model.FirstName + " " + @Model.LastName)</h3>
+
+                                        <span class="text-primary">My Account</span>
+                                    </div>
+                                    <ul class="list-unstyled mb-1-9">
+
+                                        <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Name:</span>@(Model.FirstName + " " + @Model.LastName)</li>
+                                        <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">User Name:</span>@Model.UserName</li>
+                                        <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Email:</span>@Model.Email</li>
+                                        <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Address:</span>@Model.Adress</li>
+                                        <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Phone:</span> @Model.Phone</li>
+                                        <li class="mb-2 mb-xl-3 display-28">
+                                            <a class="btn btn-outline-primary btn" href="/Profile/EditProfile" role="button">Edit</a>
+@*                                             <a class="btn btn-outline-danger btn" href="/Profile/Delete" role="button">Delete</a>
+ *@                                        </li>
+
+                                    </ul>
+                                    <ul class="row text-center social-icon-style1 list-unstyled mb-0 ps-0">
+                                        <div class="col-1">
+                                        <li><a href="#!"><i class="bi bi-twitter"></i></a></li>
+                                </div>
+                                <div class="col-1"><li><a href="#!"><i class="bi bi-facebook"></i></a></li></div>
+                                <div class="col-1"><li><a href="#!"><i class="bi bi-pinterest"></i></a></li></div>
+                                <div class="col-1"><li><a href="#!"><i class="bi bi-instagram"></i></a></li></div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>

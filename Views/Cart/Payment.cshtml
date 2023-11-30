@@ -1,0 +1,100 @@
+﻿@using GraduaitionProjectITI.ViewModel.Cart;
+@using GraduaitionProjectITI.ViewModel.ConfirmOrder;
+@model List<GraduaitionProjectITI.ViewModel.ProductsWithCount>
+@{
+    ViewData["Title"] = "Payment";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    double ProductCount = 0;
+    foreach(var item in Model)
+    {
+        ProductCount += (item.Count );
+    }
+    var UserLogged = ViewData["UserLogged"] as GraduaitionProjectITI.Models.Entity.ApplicationUser;
+
+    UserOrdersDataViewModel myModel = new UserOrdersDataViewModel();
+    myModel.ProductData = new List<ProductData>();
+    myModel.UserID = "";
+    myModel.TotalCost = 0;
+    myModel.Destination = "";
+
+}
+
+
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
+<div class="p-5">
+
+    <div class="PbgCLR m-1 m-lg-5 p-2 rounded-5 shadow-lg ">
+        <div class="container">
+            <main>
+                <div class="py-5 text-center">
+                    <img class="d-block mx-auto mb-4" src="/HomeImages/LogoDark.png" alt="" width="72" height="57">
+                    <h2>Checkout </h2>
+                </div>
+
+                <div class="row g-5">
+                    <div class="col-md-5 col-lg-4 order-md-last">
+                        <h4 class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="text-primary">Your cart</span>
+                            <span class="badge bg-primary rounded-pill ">@ProductCount</span>
+                        </h4>
+                        <ul class="list-group mb-3">
+                            @{
+
+                                double totalPrice = 0;
+                                foreach (var item in Model)
+                                {
+                                    myModel.ProductData.Add(new ProductData() { Id = item.product.Id, Count = item.Count });
+                                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                                        <div>
+                                            <h6 class="my-0"><strong>Product name :</strong> @item.product.Name</h6>
+                                            <small class="text-body-secondary"><strong>Amount :</strong>  @item.Count</small>
+                                        </div>
+                                        <span class="text-body-secondary">
+                                            @(
+                                            item.product.Price * item.Count
+                                                )  EGP
+                                        </span>
+                                    </li>
+
+                                    totalPrice += (item.product.Price * item.Count);
+                                }
+
+
+                                myModel.UserID = UserLogged.Id;
+                                myModel.TotalCost = totalPrice;
+                            }
+
+
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Total  (EGP)</span>
+                                <strong id="totalPrice">@totalPrice</strong>
+                            </li>
+                        </ul>
+
+
+                    </div>
+                    <div class="col-md-7 col-lg-8">
+                        <h4 class="mb-3">Billing address</h4>
+
+
+                        @Html.Partial("PaymentPartial" , myModel)
+
+                        
+                    </div>
+                </div>
+            </main>
+
+            <footer class="my-5 pt-5 text-body-secondary text-center text-small">
+                <p class="mb-1">© 2023 ITI Graduation Team </p>
+
+            </footer>
+        </div>
+
+
+    </div>
+
+</div>

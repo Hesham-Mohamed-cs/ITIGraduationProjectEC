@@ -1,0 +1,98 @@
+﻿@model IEnumerable<GraduaitionProjectITI.Models.Entity.Product>
+@{
+    var pages = 1;
+    var allProds = Model.Count();
+    var prods = Model.ToList();
+
+
+    if (allProds >= 16)
+    {
+        if (allProds % 16 == 0)
+        {
+            pages = allProds / 16;
+        }
+        else
+        {
+            pages = (allProds / 16) + 1;
+        }
+    }
+    else
+    {
+        pages = 1;
+    }
+}
+
+
+
+
+
+
+<div id="products" class="container-fluid d-flex flex-wrap justify-content-center">
+
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-touch="false" data-bs-interval="false">
+        <div class="carousel-indicators">
+
+            @for (int page = 1; page <= pages; page++)
+            {
+                if (page == 1)
+                {
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active text-light" aria-current="true" aria-label="Slide 1">@(page)</button>
+                }
+                else
+                {
+
+                    <button type="button" data-bs-target="#carouselExampleDark" class="text-light" data-bs-slide-to="@(page - 1)" aria-label="Slide @(page)">@(page)</button>
+
+                }
+
+            }
+
+        </div>
+        <div class="carousel-inner">
+
+
+            @for (int page = 1; page <= pages; page++)
+            {
+                if (page == 1)
+                {
+
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <div class="container-fluid d-flex d-block w-100 flex-wrap justify-content-center ">
+
+                            @for (int prod = 1; prod <= 16 && prod <=allProds; prod++)
+                            {
+                                <div id="partialViewDiv">
+                                    @Html.Partial("Product", prods[prod-1]);
+                                </div>
+                            }
+
+
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <div class="container-fluid d-flex d-block w-100 flex-wrap justify-content-center ">
+
+                            @for (int prod = ((page - 1) * 16) + 1; prod <= (page * 16) && prod <= allProds; prod++)
+                            {
+                                <div id="partialViewDiv">
+                                    @Html.Partial("Product", prods[prod-1]);
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                }
+            }
+
+        </div>
+
+
+
+    </div>
+
+
+</div>
+

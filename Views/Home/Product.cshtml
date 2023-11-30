@@ -1,0 +1,47 @@
+﻿@model GraduaitionProjectITI.Models.Entity.Product
+
+
+<div class="card col-4 m-3 p-2 cursor-pointer rounded-4" style="width: 18rem;">
+
+    <img onclick="navigateToProduct(@Model.Id)" src="~/ProductImages/@Model.ImgPath" class="card-img-top mt-1 rounded" height="150px" alt="...">
+    <div class="card-body">
+        <div onclick="navigateToProduct(@Model.Id)">
+            <h4 class="card-title">@((@Model.Name.Length > 12) ? @Model.Name.Substring(0, 10) + "..." : @Model.Name)</h4>
+            <h5 class="card-title">@Model.Brand.Name</h5>
+            @if (@Model.Count <= 5)
+            {
+                <p class="card-text text-danger"><strong>Last:</strong> @Model.Count <strong>Pieces</strong></p>
+            }
+            else if (@Model.Count > 5 && @Model.Count <= 20)
+            {
+                <p class="card-text "><strong>Available in Stock:</strong> @Model.Count</p>
+                
+            }
+
+            else
+            {
+                <p class="card-text text-dark ">@((@Model.Details.Length > 25) ? @Model.Details.Substring(0, 22) + "..." : @Model.Details) </p>
+
+            }
+ 
+            <h4 class="card-text ">@Model.Price EGP</h4>
+            <div class="product col-12">
+                <div class="rating">
+                    @for (int i = 1; i <= 5; i++)
+                    {
+                        <span class="star @((i <= (Model.Reviews.Count > 0 ? Math.Round(Model.Reviews.Sum(r => r.Rate)*1.0/ Model.Reviews.Count*1.0 ) : 0) ) ? "rated" : "unrated")"><i class="fas fa-star"></i></span>
+                    }
+                    <span class="rating-value">@(Model.Reviews.Count > 0 ? Math.Round(Model.Reviews.Sum(r => r.Rate) * 1.0 / Model.Reviews.Count * 1.0 , 2) : 0)</span>
+                </div>
+            </div>
+        </div>
+        @if (Model.Count <=0)
+        {
+            <a id="@Model.Id" class="btn btn-danger hide col-12 disabled">Out Of Stock</a>
+        }
+        else
+        {
+        <a id="@Model.Id" class="btn btn-primary hide col-12 " onclick="AddToCart(@Model.Id)">Add To Cart</a>         
+        }
+    </div>
+</div>

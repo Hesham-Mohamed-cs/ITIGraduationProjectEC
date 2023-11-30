@@ -1,0 +1,172 @@
+﻿@model List<GraduaitionProjectITI.Models.Entity.Product>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<link rel="stylesheet" href="~/css/Cart.css" />
+@*@{
+    double totalprice = 0;
+    foreach (var item in Model)
+    {
+        totalprice += item.Price  ;
+    }
+}*@
+<div class="container p-4">
+    <div class="row">
+<h2 class="text-light">Your Products</h2>
+        <div class="col-7">
+
+            @foreach(var item in Model)
+            {                                   
+                <div class="card mb-3 w-100">
+                    <div class="row g-0 justify-content-between">
+                        <div class="col-md-3 d-flex justify-content-start align-items-center">
+                            <img class="img-fluid rounded-start" src="~/ProductImages/@item.ImgPath">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <div class="card-title"><strong class="fw-bold">Product Name:</strong>@item.Name</div>
+                                <p class="card-text">
+                                    <strong>Description:</strong> @item.Details
+                                </p>
+                                <h4 class="card-title"><strong>Price: @item.Price EGP</strong></h4>
+                                <h4 class="card-title"><strong>Available: @item.Count </strong></h4>
+                                <div class="d-flex align-items-center ">
+                                    <div class="counter-button btn btn-dark text-light" onclick="decrement(@item.Id, @item.Count)">-</div>
+                                    <div class="counter-number" id="count_@item.Id">1</div>
+                                    <div class="counter-button btn btn-dark text-light" onclick="increment(@item.Id, @item.Count)">+</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-1 d-flex justify-content-center align-items-center">
+                            <div onclick="showConfirmation(@item.Id)" class="col-1 fs-4 h-25 w-25 XMark" id="cartXMark" value="6">X</div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        @{
+            if(Model.Count==0)
+            {
+                    <div class="row bg-dark m-auto p-4 justify-content-center text-bg-dark"  > Your Cart is empty   <a class="text-light text-center" style="display:block" href="/home/index">Go Shopping</a>  </div>
+                    <div class="container m-auto">
+                  
+                    </div>
+
+            }
+            else
+            {
+                    <div class="col-4">
+                        <div class="d-flex row justify-content-center p-3 " style="background-color:#dbf2e3;">
+                            <h1>Total Price: <span id="totalPriceDisplay"></span></h1>
+                            <a onclick="getAllProductsWithItsCount()" class="col-10 btn btn-primary ">Checkout</a>
+                        </div>
+                    </div>
+            }
+            
+        }
+
+
+        
+    </div>
+
+</div>
+
+<script>
+    function CountTotalPrice() {
+        var totalPrice = 0;
+
+    @foreach (var item in Model)
+    {
+        <text>
+                        var countElement = document.getElementById('count_@item.Id');
+            if (countElement) {
+                var count = parseInt(countElement.innerHTML, 10);
+                var itemPrice = parseFloat('@item.Price'); // Assuming item.Price is a double
+
+                // Check if count and itemPrice are valid numbers
+                if (!isNaN(count) && !isNaN(itemPrice)) {
+                    totalPrice += count * itemPrice;
+                }
+            }
+        </text>
+    }
+
+            // Update the total price display
+            var totalPriceDisplayElement = document.getElementById('totalPriceDisplay');
+        if (totalPriceDisplayElement) {
+            totalPriceDisplayElement.innerHTML = totalPrice.toFixed(2) + "    EGP"; // Assuming you want to display the total with two decimal places
+        }
+
+        console.log('Total Price:', totalPrice);
+
+    }
+    CountTotalPrice();
+   
+    function getAllProductsWithItsCount() {
+        var products = [];
+
+        @foreach (var item in Model)
+        {
+            <text>
+                            var countElement = document.getElementById('count_@item.Id');
+                if (countElement) {
+                    var count = parseInt(countElement.innerHTML, 10);
+                    var productId = @item.Id; // Assuming item.Id is an integer
+
+                    // Check if count and productId are valid numbers
+                    if (!isNaN(count) && !isNaN(productId)) {
+                        var product = {
+                            Id: productId,
+                            Count: count
+                        };
+
+                        products.push(product);
+                    
+                    }
+                }
+            </text>
+        }
+            console.log(products)
+
+            // Make an AJAX request to send the products data to the Payment action
+            $.ajax({
+            url: '/Cart/Cart',
+                method: 'POST',
+                contentType: 'application/json',
+            data: JSON.stringify(products),
+
+                success: function (response) {
+                    // Handle the response from the server if needed
+                    console.log("okk");
+                    window.location.href="/Cart/Payment"
+                    
+                },
+                error: function (error) {
+                    // Handle errors if any
+                // console.log("error");
+                // window.location.href = "/Account/Login"
+                Swal.fire({
+                    title: 'You Should login first',
+                    text: "You won't be able to go to Checkout!",
+                    icon: 'warning',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Login!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "/Account/Login"
+                    }
+                })
+
+                }
+            });
+
+    }
+</script>
+
+
+<script src="~/js/Cart.js">
+</script>

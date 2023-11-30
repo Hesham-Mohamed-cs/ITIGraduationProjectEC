@@ -1,0 +1,344 @@
+﻿@model GraduaitionProjectITI.Models.Entity.Product
+@{
+    var ReviewModel = new GraduaitionProjectITI.ViewModel.Review.AddReviewViewModel();
+}
+@{
+    ViewData["Title"] = "Home Page";
+
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+
+}
+<div class="d-flex flex-wrap container ">
+    <div class="row col-12">
+        <div class="col-12 col-md-7 m-1">
+            <img id="prodIMG" src="~/ProductImages/@Model.ImgPath" width="90%" style="max-height:24rem;" class="maxH" />
+            @*             <div class="d-flex justify-content-center row" id="loading"></div>
+            *@
+        </div>
+
+        <div class="col-md-4 col-sm-12 d-flex justify-content-center flex-wrap mt-2 border border-dark p-3  bgCLR">
+
+            <div class="col-12 fs-4 fw- mb-3" style="font-size:1rem">
+                <strong class="fs-1">Title:</strong> @Model.Name
+            </div>
+            <div class="col-12 fs-2 mb-1"><strong>Brand:</strong> @Model.Brand.Name</div>
+            <div class="col-12 fs-2 mb-1"><strong>Category:</strong> @Model.Category.Name</div>
+            <div class="col-12 fs-2 mb-1"><strong>Details:</strong> <div class="overflow-wrap-break-word">@Model.Details</div> </div>
+            <div class="col-12 fs-2 mb-1"><strong>Manufacture:</strong> @Model.Manufacture</div>
+            @if (@Model.Count <= 20)
+            {
+                <div class="col-12 fs-2 mb-1"><strong>Available in Stock:</strong> @Model.Count</div>
+            }
+
+
+            <div class="col-12 fs-3 mb-1"><strong>Price:</strong> @Model.Price EGP</div>
+            <div class="product col-12">
+                <div class="rating">
+                    @for (int i = 1; i <= 5; i++)
+                    {
+                        <span class="star @((i <= (Model.Reviews.Count > 0 ? Math.Round(Model.Reviews.Sum(r => r.Rate)*1.0/ Model.Reviews.Count*1.0 ) : 0) ) ? "rated" : "unrated")"><i class="fas fa-star"></i></span>
+                    }
+                    <span class="rating-value">@(Model.Reviews.Count > 0 ? Math.Round(Model.Reviews.Sum(r => r.Rate) * 1.0 / Model.Reviews.Count * 1.0, 2) : 0)</span>
+                </div>
+            </div>
+
+
+
+            <br />
+
+            @if (Model.Count <= 0)
+            {
+                <a id="@Model.Id" class="btn btn-danger col-12 disabled">Out Of Stock</a>
+            }
+            else
+            {
+                <a id="@Model.Id" class="btn btn-primary  col-12 " onclick="AddToCart(@Model.Id)">Add To Cart</a>
+            }
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <br />
+
+
+    <div class=" display-5 m-3  text-light">
+        People Also Watch
+    </div>
+
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+
+                <div class="container-fluid d-flex d-block w-100 flex-wrap justify-content-center border-2" style="border-style:solid ">
+                    @if (ViewData["Products"] != null)
+                    {
+                        @foreach (var item in ViewData["Products"] as IEnumerable<GraduaitionProjectITI.Models.Entity.Product>)
+                        {
+                            <div class="card col-3 m-1 cursor-pointer" style="width: 18rem;">
+                                <div onclick="navigateToProduct(@item.Id)">
+                                    <img src="~/ProductImages/@item.ImgPath" class="card-img-top mt-1 " height="150px" alt="...">
+
+                                    <div class="card-body">
+                                        <h4 class="card-title">@((item.Name.Length > 12) ? @item.Name.Substring(0, 10) + "..." : @item.Name)</h4>
+                                        <h5 class="card-title">@item.Brand.Name</h5>
+                                        <p class="card-text text-dark">
+                                            @(
+                                                (@item.Details.Length > 25) ? @item.Details.Substring(0, 22) + "..." : @item.Details
+                                                )
+                                        </p>
+                                        <h4 class="card-text ">@item.Price EGP</h4>
+
+                                        <div class="product col-12">
+                                            <div class="rating">
+                                                @for (int i = 1; i <= 5; i++)
+                                                {
+                                                    <span class="star @((i <= (item.Reviews.Count > 0 ? Math.Round(item.Reviews.Sum(r => r.Rate)*1.0/ item.Reviews.Count*1.0 ) : 0) ) ? "rated" : "unrated")"><i class="fas fa-star"></i></span>
+                                                }
+                                                <span class="rating-value">@(item.Reviews.Count > 0 ? Math.Round(item.Reviews.Sum(r => r.Rate) * 1.0 / item.Reviews.Count * 1.0, 2) : 0)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                @if (item.Count <= 0)
+                                {
+                                    <a id="@item.Id" class="btn btn-danger hide col-12 disabled">Out Of Stock</a>
+                                }
+                                else
+                                {
+                                    <a id="@item.Id" class="btn btn-primary hide col-12 " onclick="AddToCart(@item.Id)">Add To Cart</a>
+                                }
+                            </div>
+
+                        }
+                    }
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container-fluid d-flex d-block w-100 flex-wrap justify-content-center border-2" style="border-style:solid ">
+                    @if (ViewData["Products"] != null)
+                    {
+                        @foreach (var item in ViewData["Products2"] as IEnumerable<GraduaitionProjectITI.Models.Entity.Product>)
+                        {
+                            <div class="card col-3 m-1 cursor-pointer" style="width: 18rem;">
+                                <div onclick="navigateToProduct(@item.Id)">
+                                    <img src="~/ProductImages/@item.ImgPath" class="card-img-top mt-1 " height="150px" alt="...">
+
+                                    <div class="card-body">
+                                        <h4 class="card-title">@((item.Name.Length > 12) ? @item.Name.Substring(0, 10) + "..." : @item.Name)</h4>
+                                        <h5 class="card-title">@item.Brand.Name</h5>
+                                        <p class="card-text text-dark">
+                                            @(
+                                                (@item.Details.Length > 25) ? @item.Details.Substring(0, 22) + "..." : @item.Details
+                                                )
+                                        </p>
+                                        <h4 class="card-text ">@item.Price EGP</h4>
+
+                                        <div class="product col-12">
+                                            <div class="rating">
+                                                @for (int i = 1; i <= 5; i++)
+                                                {
+                                                    <span class="star @((i <= (item.Reviews.Count > 0 ? Math.Round(item.Reviews.Sum(r => r.Rate)*1.0/ item.Reviews.Count*1.0 ) : 0) ) ? "rated" : "unrated")"><i class="fas fa-star"></i></span>
+                                                }
+                                                <span class="rating-value">@(item.Reviews.Count > 0 ? Math.Round(item.Reviews.Sum(r => r.Rate) * 1.0 / item.Reviews.Count * 1.0, 2) : 0)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                @if (item.Count <= 0)
+                                {
+                                    <a id="@item.Id" class="btn btn-danger hide col-12 disabled">Out Of Stock</a>
+                                }
+                                else
+                                {
+                                    <a id="@item.Id" class="btn btn-primary hide col-12 " onclick="AddToCart(@item.Id)">Add To Cart</a>
+                                }
+                            </div>
+
+                        }
+                    }
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container-fluid d-flex d-block w-100 flex-wrap justify-content-center border-2" style="border-style:solid ">
+                    @if (ViewData["Products"] != null)
+                    {
+                        @foreach (var item in ViewData["Products3"] as IEnumerable<GraduaitionProjectITI.Models.Entity.Product>)
+                        {
+                            <div class="card col-3 m-1 cursor-pointer" style="width: 18rem;">
+                                <div onclick="navigateToProduct(@item.Id)">
+                                    <img src="~/ProductImages/@item.ImgPath" class="card-img-top mt-1 " height="150px" alt="...">
+
+                                    <div class="card-body">
+                                        <h4 class="card-title">@((item.Name.Length > 12) ? @item.Name.Substring(0, 10) + "..." : @item.Name)</h4>
+                                        <h5 class="card-title">@item.Brand.Name</h5>
+                                        <p class="card-text text-dark">
+                                            @(
+                                                (@item.Details.Length > 25) ? @item.Details.Substring(0, 22) + "..." : @item.Details
+                                                )
+                                        </p>
+                                        <h4 class="card-text ">@item.Price EGP</h4>
+
+                                        <div class="product col-12">
+                                            <div class="rating">
+                                                @for (int i = 1; i <= 5; i++)
+                                                {
+                                                    <span class="star @((i <= (item.Reviews.Count > 0 ? Math.Round(item.Reviews.Sum(r => r.Rate)*1.0/ item.Reviews.Count*1.0 ) : 0) ) ? "rated" : "unrated")"><i class="fas fa-star"></i></span>
+                                                }
+                                                <span class="rating-value">@(item.Reviews.Count > 0 ? Math.Round(item.Reviews.Sum(r => r.Rate) * 1.0 / item.Reviews.Count * 1.0, 2) : 0)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                @if (item.Count <= 0)
+                                {
+                                    <a id="@item.Id" class="btn btn-danger hide col-12 disabled">Out Of Stock</a>
+                                }
+                                else
+                                {
+                                    <a id="@item.Id" class="btn btn-primary hide col-12 " onclick="AddToCart(@item.Id)">Add To Cart</a>
+                                }
+                            </div>
+
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev onHover btnWidth" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next onHover btnWidth" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    </>
+
+
+
+
+
+
+
+    <div class="row mt-5 p-2 allComments">
+
+        <div class="display-4 ">
+            Clients Comments
+        </div>
+
+
+
+        <hr />
+
+        @{
+            var reviews = ViewData["Reviews"] as List<GraduaitionProjectITI.ViewModel.GetReviewsViewModel>;
+        }
+        @if (reviews.Count != 0)
+
+        {
+            @foreach (var item in reviews)
+            {
+                <div class="COMMENT">
+
+                    <div class="product col-12 mb-2">
+                        <div class="rating">
+                            @for (int i = 1; i <= 5; i++)
+                            {
+                                <span class="star @((i <= item.Rate) ? " rated" : "unrated"
+                                 )"><i class="fas fa-star"></i></span>
+                            }
+                            <span class="rating-value">@item.Rate</span>
+                        </div>
+                    </div>
+
+
+                    <h4 class="mb-2">@item.Comment</h4>
+
+                    <p class="mb-2">@item.AddedDateTime by @item.UserFullName <i class="bi bi-person-circle"></i></p>
+
+                </div>
+
+                <hr />
+
+
+
+            }
+
+
+
+
+
+        }
+        else
+        {
+            <h3>there is No Comments</h3>
+            <hr />
+        }
+
+
+        <form asp-action="AddReview" method="post">
+
+            <input type="hidden" name="ProdId" value="@Model.Id">
+            <input type="hidden" name="email" value="@User.Identity.Name">
+
+
+            <p>
+                Rating: <span class="star-rating">
+                    <label for="rate-1" style="--i:1"><i class="bi bi-star-fill"></i></label>
+                    <input type="radio" name="Rate" id="rate-1" value="1">
+                    <label for="rate-2" style="--i:2"><i class="bi bi-star-fill"></i></i></label>
+                    <input type="radio" name="Rate" id="rate-2" value="2">
+                    <label for="rate-3" style="--i:3"><i class="bi bi-star-fill"></i></i></label>
+                    <input type="radio" name="Rate" id="rate-3" value="3">
+                    <label for="rate-4" style="--i:4"><i class="bi bi-star-fill"></i></label>
+                    <input type="radio" name="Rate" id="rate-4" value="4">
+                    <label for="rate-5" style="--i:5"><i class="bi bi-star-fill"></i></i></label>
+                    <input type="radio" name="Rate" id="rate-5" value="5">
+                </span>
+            </p>
+
+            <div class="shadow p-3 mb-5 bg-body-tertiary rounded form-group shadow-textarea">
+                <textarea asp-for="@ReviewModel.Comment" name="Comment" class="form-control z-depth-1" rows="3" required placeholder="Write Your Comment here..."></textarea>
+            </div>
+            <span asp-validation-for="@ReviewModel.Comment" class="text-danger"></span>
+
+
+            <button type="submit" class="btn btn-primary col-12">Add Comment</button>
+
+            @if (ViewData["SignInError"] != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @ViewData["SignInError"]
+                </div>
+            }
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+

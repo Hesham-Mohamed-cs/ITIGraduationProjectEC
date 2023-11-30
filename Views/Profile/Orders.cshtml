@@ -1,0 +1,76 @@
+﻿@model List<GraduaitionProjectITI.Models.Entity.Order>
+
+@{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    var user = ViewBag.user;
+}
+
+
+<div class="container m-5 text-center">
+
+    
+            @if (Model.Count == 0)
+            {
+                <div class="row bg-dark m-auto p-4 justify-content-center text-bg-dark"> You Have no Orders   <a class="text-light text-center" style="display:block" href="/home/index">Go Shopping</a>  </div>
+                <div class="container m-auto">
+                </div>
+            }
+            else
+            {
+        <h1 class="text-light fw-bold">All Orders</h1>
+
+         
+            <table class="table table table-hover table-striped">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">
+                            Order ID
+                        </th>
+                        <th scope="col">
+                            Order Date
+                        </th>
+                        <th scope="col">
+                            Delivery Date
+                        </th>
+                        <th scope="col">
+                            Destination
+                        </th>
+                        <th scope="col">
+                            Cost
+                        </th>
+
+                        <th>
+
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.Id
+                        </td>
+                        <td>
+                            @item.ResevationDate.Date.Day/@item.ResevationDate.Date.Month/@item.ResevationDate.Date.Year
+                        </td>
+                        <td>
+                            @item.DeliveryDate.Date.Day/@item.DeliveryDate.Date.Month/@item.DeliveryDate.Date.Year
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.destination)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Cost)
+                        </td>
+                        <td>
+                            <div><a class="btn btn-outline-primary" asp-action="Receipt" asp-controller="Cart" asp-route-orderId="@item.Id" asp-route-userId="@user.Id">Details</a></div>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+                
+            }
+ 
+</div>

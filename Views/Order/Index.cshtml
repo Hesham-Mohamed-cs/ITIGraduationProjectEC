@@ -1,0 +1,66 @@
+﻿@model IEnumerable<GraduaitionProjectITI.Models.Entity.Order>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container text-center">
+    <h1>All Order</h1>
+    <a asp-action="GenerateReport" class="btn btn-outline-primary col-2 m-1" role="button"> <i class="bi bi-plus-square"></i> Generate Report</a><br />
+
+    <table class="table table table-hover table-striped">
+        <thead class="table-primary">
+            <tr>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.ResevationDate)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.DeliveryDate)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Cost)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.destination)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.IsConfirmed)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.User)
+                </th>
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.ResevationDate.Date.Day/@item.ResevationDate.Date.Month/@item.ResevationDate.Date.Year
+                    </td>
+                    <td>
+                        @item.DeliveryDate.Date.Day/@item.DeliveryDate.Date.Month/@item.DeliveryDate.Date.Year
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.destination)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsConfirmed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.User.Email)
+                    </td>
+                    <td>
+                        <div><a class="btn btn-outline-primary" asp-action="Details" asp-route-Id="@item.Id">Details</a></div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

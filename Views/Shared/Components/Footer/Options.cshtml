@@ -1,0 +1,166 @@
+﻿@model FooterDto
+
+
+
+
+
+
+<div class="container-fluid w-100 bg-primary">
+    <div class="row" style="width: 100%;">
+        <div class="container col-12 bg-primary">
+            <div class="col-12 bg-primary">
+
+                <footer class="text-center text-lg-start text-white">
+
+                    <section class="d-flex justify-content-between p-4">
+
+                        <div class="me-5">
+                            <span>Get connected with us on social networks:</span>
+                        </div>
+
+                        <div>
+                            <a href="" class="text-white me-4">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="" class="text-white me-4">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="" class="text-white me-4">
+                                <i class="fab fa-google"></i>
+                            </a>
+                            <a href="" class="text-white me-4">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="" class="text-white me-4">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+
+                    </section>
+
+                    <section class="">
+                        <div class="container text-center text-md-start mt-5">
+
+                            <div class="row mt-3">
+
+                                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+                                    <h6 class="text-uppercase fw-bold text-light">About Leon Trade</h6>
+                                    <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                                        style="width: 60px; height: 2px" />
+                                    <p>
+                                        We are here to meet your needs in the world of car parts.
+                                        Whether you're looking for genuine parts or high-quality alternatives,
+                                        we offer a wide range of options to meet your car maintenance and repair requirements.
+                                    </p>
+                                </div>
+
+                                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                                    @* neeeds for loop *@
+
+
+                                    <h6 class="text-uppercase fw-bold text-light">Categories</h6>
+                                    <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                                        style="width: 60px; height: 2px" />
+
+
+                                    @{var count2 = 0;}
+                                    @foreach(var cat in Model.Categories)
+                                    {
+                                        count2++;
+                                    <p>
+                                            <a style="cursor:pointer;" onclick="CategoryProducts(@cat.Id)" class="text-white">@cat.Name</a>
+                                    </p>
+
+                                        @if (count2 >= 5)
+                                        {
+                                            break;
+                                        }
+                                    }
+
+   
+                                </div>
+                                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+
+                                    @* neeeds for loop *@
+
+
+                                    <h6 class="text-uppercase fw-bold text-light">Brand</h6>
+                                    <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                                        style="width: 60px; height: 2px" />
+                                    
+
+
+    
+                                        @{var count = 0;}
+                                    @foreach(var brand in Model.Brands)
+                                    {
+                                        count++;
+                                        
+                                    <p>
+                                            <a style="cursor:pointer;" onclick="BrandProducts(@brand.Id)" class="text-white">@brand.Name</a>
+                                    </p>
+                                        @if (count >= 5)
+                                        {
+                                            break;
+                                        }
+                                    }
+
+
+
+                                </div>
+
+                                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                                    <h6 class="text-uppercase fw-bold text-light">Useful links</h6>
+                                    <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                                        style="width: 60px; height: 2px" />
+                                    <p>
+                                        @if (User.Identity.Name == null)
+                                        {
+                                            <a href="/Account/Login" class="text-white">Your Account</a>
+                                        }
+                                        else
+                                        {
+                                            <a href="/Profile/index" class="text-white">Your Account</a>
+                                        }
+                                    </p>
+                                    <p>
+                                        <a href="/Cart/index" class="text-white">Shipping Cart</a>
+                                    </p>
+                                    <p>
+                                        <a href="/Contact" class="text-white">Contact US</a>
+                                    </p>
+                                    <p>
+                                        <a href="/About/index" class="text-white">About us</a>
+                                    </p>
+                                    <p>
+                                        <a href="/Help/index" class="text-white">Help</a>
+                                    </p>
+                                </div>
+
+                                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+                                    <h6 class="text-uppercase fw-bold text-light">Contact</h6>
+                                    <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                                        style="width: 60px; height: 2px" />
+
+                                    <p><i class="fas fa-envelope mr-3"></i> Leon.Trade@gmail.com </p>
+                                    <p><i class="fas fa-phone mr-3"></i> + 01271927950</p>
+                                    <p><i class="fas fa-print mr-3"></i> + 034359769</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <div class="text-center p-3">
+                        © 2023 Copyright: Graduaition Project Team
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>

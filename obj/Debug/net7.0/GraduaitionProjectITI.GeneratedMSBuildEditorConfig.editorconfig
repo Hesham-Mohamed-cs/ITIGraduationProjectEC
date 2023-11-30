@@ -1,0 +1,235 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = GraduaitionProjectITI
+build_property.RootNamespace = GraduaitionProjectITI
+build_property.ProjectDir = E:\.0000000000000\FinalGraduationProject\lastone\GraduaitionProjectITI\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = E:\.0000000000000\FinalGraduationProject\lastone\GraduaitionProjectITI
+build_property._RazorSourceGeneratorDebug = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/About/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Brand/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Brand/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Brand/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Brand/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Brand/_BrandTable.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcX0JyYW5kVGFibGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Cart/GetIDs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxHZXRJRHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Cart/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Cart/Payment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxQYXltZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Cart/PaymentFailed.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxQYXltZW50RmFpbGVkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Cart/PaymentPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxQYXltZW50UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Cart/PaymentSuccess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxQYXltZW50U3VjY2Vzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Cart/Receipt.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxSZWNlaXB0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Category/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Category/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Category/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Category/_CategoryTable.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcX0NhdGVnb3J5VGFibGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Contact/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/DashBord/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaEJvcmRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Help/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVscFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Home/GetProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Home/Product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Order/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Order/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Product/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Product/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Product/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Product/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Product/_ProductTable.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxfUHJvZHVjdFRhYmxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Profile/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Profile/EditProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxFZGl0UHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Profile/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Profile/Orders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxPcmRlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/ReportPDF/GeneratePDF.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0UERGXEdlbmVyYXRlUERGLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Report/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Review/GetReviews.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XEdldFJldmlld3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Review/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Shared/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFjY2Vzc0RlbmllZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Shared/Components/Footer/Options.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRm9vdGVyXE9wdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Shared/Components/Navbar/Options.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTmF2YmFyXE9wdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Shared/NotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE5vdEZvdW5kLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Shared/_CategoryTablePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DYXRlZ29yeVRhYmxlUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Shared/_HomeLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ib21lTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/.0000000000000/FinalGraduationProject/lastone/GraduaitionProjectITI/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-mrrdmz9dxb

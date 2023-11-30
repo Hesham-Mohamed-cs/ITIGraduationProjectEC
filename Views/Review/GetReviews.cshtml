@@ -1,0 +1,44 @@
+﻿@model IEnumerable<GraduaitionProjectITI.ViewModel.GetReviewsViewModel>
+
+@{
+    ViewData["Title"] = " Get Reviews ";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container text-center">
+    <h1>  Product @ViewBag.ProductName  Reviews  </h1>
+
+    <table class="table table table-hover table-striped">
+        <thead class="table-primary">
+
+            <tr>
+                <th scope="col">
+                    Customer Name
+                </th>
+                <th scope="col">
+                    Comment
+                </th>
+                <th scope="col">
+                    Rate
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>
+                        @item.UserFullName
+                    </th>
+                    <th>
+                        @item.Comment
+                    </th>
+                    <th>
+                        @item.Rate  / 5
+                    </th>
+                </tr>
+            }
+        </tbody>
+    </table>
+<div><a class="btn btn-outline-primary " asp-action="Index" >Back To Review List</a></div>
+</div>

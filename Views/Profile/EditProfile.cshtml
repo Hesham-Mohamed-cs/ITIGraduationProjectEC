@@ -1,0 +1,59 @@
+﻿@model GraduaitionProjectITI.ViewModel.profile.EditProfileModelView
+@{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<div class="modal modal-sheet position-static d-block  p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content rounded-4 shadow">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+                <h1 class="fw-bold mb-0 fs-2">Update Profile</h1>
+            </div>
+
+            <div class="modal-body text-dark p-5 pt-0">
+                <form asp-controller="Profile" asp-action="EditProfile" method="post">
+
+                    <div class="form-group">
+                        <label asp-for="firstName"></label>
+                        <input asp-for="firstName" class="form-control" />
+                        <span asp-validation-for="firstName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="lastName"></label>
+                        <input asp-for="lastName" class="form-control" />
+                        <span asp-validation-for="lastName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="address"></label>
+                        <input asp-for="address" class="form-control" />
+                        <span asp-validation-for="address" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="phone"></label>
+                        <input asp-for="phone" class="form-control" />
+                        <span asp-validation-for="phone" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="email"></label>
+                        <input asp-for="email" readonly class="form-control" />
+                        <span asp-validation-for="email" class="text-danger"></span>
+                    </div>
+                   
+                    <br />
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-success btn">Update</button>
+                        <a class="btn btn-primary btn" asp-action="Index" asp-controller="Profile"> Cancel </a>
+                    </div><br />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,184 @@
+﻿@using GraduaitionProjectITI.ViewModel.SubOrders
+@using GraduaitionProjectITI.Models.Entity
+@model Order
+@{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    var SubOrder = ViewBag.SubOrders;
+}
+
+<head>
+
+    <style>
+        body {
+            margin-top: 10px;
+        }
+
+        .cardP {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(0,0,0,.125);
+            border-radius: 0.50rem;
+        }
+
+
+        .text-primary {
+            color: #ceaa4d !important;
+        }
+
+        .text-secondary {
+            color: #15395A !important;
+        }
+
+        .font-weight-600 {
+            font-weight: 600;
+        }
+
+        .display-26 {
+            font-size: 1.3rem;
+        }
+
+
+
+        .p-1-9 {
+            padding: 1.9rem;
+        }
+
+        .bg-secondary {
+            background: #15395A !important;
+        }
+
+        .pe-1-9, .px-1-9 {
+            padding-right: 1.9rem;
+        }
+
+        .ps-1-9, .px-1-9 {
+            padding-left: 1.9rem;
+        }
+
+        .pb-1-9, .py-1-9 {
+            padding-bottom: 1.9rem;
+        }
+
+        .pt-1-9, .py-1-9 {
+            padding-top: 1.9rem;
+        }
+
+        .mb-1-9, .my-1-9 {
+            margin-bottom: 1.9rem;
+        }
+
+        .rounded {
+            border-radius: 0.25rem !important;
+        }
+    </style>
+
+</head>
+<body>
+    <section class="">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-8 mb-4 mb-sm-5">
+                    <div class="cardP card-style1 border-0">
+                        <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
+                            <div class="row align-items-center border border-black p-3 rounded-4">
+
+                                <div class="col=12 px-xl-10 row">
+                                    <div class="bg-secondary d-lg-inline-block col-12 py-1-9 px-1-9 px-sm-6 mb-1-9 rounded">
+
+                                        <h3 class="h2 text-white mb-0">@(User.Identity.Name)</h3>
+
+                                        <span class="text-primary">My Account</span>
+                                    </div>
+
+
+                                <div class="col-7">
+
+
+                                        <ul class="list-unstyled mb-1-9 ">
+
+                                            <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Order Id:</span>@(Model.Id)</li>
+                                            <li class="mb-2 mb-xl-3 display-28">
+                                                <span class="display-26 text-secondary me-2 font-weight-600">Confirmed:</span>@(Model.IsConfirmed ? "Yes" : "No")
+                                            </li>
+                                            <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Destination:</span>@Model.destination</li>
+                                            <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Cost:</span>@Model.Cost EGP</li>
+                                            <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Delivery Date:</span> @Model.DeliveryDate</li>
+
+
+                                        </ul>
+                                        <ul class="row text-center social-icon-style1 list-unstyled mb-0 ps-0">
+                                            <div class="col-1">
+                                            <li><a href="/Profile/Index"><i class="bi bi-person-circle"></i></a></li>
+                                    </div>
+
+                                    <div class="col-1">
+                                        <li><a href="/Home"><i class="bi bi-house-fill"></i></a></li>
+                                    </div>
+
+                                    <div class="col-1">
+                                        <li><a href="/Contact"><i class="bi bi-telephone-inbound-fill"></i></a></li>
+                                    </div>
+
+                                    <div class="col-1">
+                                        <li><a href="/Help"><i class="bi bi-patch-question-fill"></i></a></li>
+                                    </div>
+
+                                    </ul>
+                                </div>
+
+
+                                <div class="col-5 p-2 rounded-3" style="background-color: #1b3248 ; height:fit-content; ">
+
+                                    <ul class="list-group mb-3">
+
+                                            @foreach (var subO in SubOrder){
+                                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                                            <div>
+                                                    <h6 class="my-0"><strong>Product name :</strong> @subO.Product.Name</h6>
+                                                    <small class="text-body-secondary"><strong>Amount :</strong>@subO.Amount</small>
+                                            </div>
+                                            <span class="text-body-secondary">
+                                                        @(subO.Amount*subO.Product.Price)  EGP
+                                            </span>
+                                        </li>
+                                            }
+
+                                        <li class="list-group-item d-flex justify-content-between text-light" style="background-color:#2d2c2c9c">
+                                            <span>Total  (EGP)</span>
+                                            <strong>@Model.Cost</strong>
+                                        </li>
+                                    </ul>
+
+
+
+
+
+
+                                </div>
+
+
+
+
+
+
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+</body>
+
+

@@ -1,0 +1,71 @@
+﻿@model GraduaitionProjectITI.ViewModel.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+
+<br>
+<br>
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="~/LoginImage/4.png"
+                     class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form asp-action="Login">
+
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+                        <h1>Login</h1>
+                    </div><hr /><br>
+                    <!-- Email input -->
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div><br />
+
+                    <!-- Password input -->
+                    <div class="form-group">
+                        <label asp-for="Password" class="control-label"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div><br />
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <!-- Checkbox -->
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="RememberMe" /> @Html.DisplayNameFor(model => model.RememberMe)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="submit" class="btn btn-primary btn-lg"
+                                style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                            Login
+                        </button>
+                        <div class="text-center fs-6">
+                            <p>
+                                <br />
+                                Not a member? <a href="/Account/Register">Sign up</a>
+                            </p>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

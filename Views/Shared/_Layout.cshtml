@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - GraduaitionProjectITI</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/bootstrap-icons/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/GraduaitionProjectITI.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom styles for the navbar */
+        .custom-navbar {
+            max-width: 1500px; /* Set the maximum width */
+            margin: auto; /* Center the navbar */
+            border-radius: 15px; /* Set border-radius for rounded edges */
+        }
+
+        .moving-container {
+            white-space: nowrap;
+            display: inline-block;
+        }
+
+        .moving-text,
+        .moving-image {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark custom-navbar" data-bs-theme="dark">
+        <div class="container-fluid text-center">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <a class="navbar-brand text-white mx-auto" asp-controller="Home" asp-action="index">
+                    <div class="moving-container">
+                        <img src="~/HomeImages/Logo.png" class="moving-image" style="height: 40px; width: auto;" />
+                        <span class="moving-text"><b>Welcome anytime to Leon Trade</b></span>
+                    </div>
+                </a>
+                <!-- ... (rest of the code) ... -->
+            </div>
+        </div>
+    </nav>
+    <br />
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container text-center">
+            &copy; 2023 - GraduaitionProjectITI - <a href="#">Privacy</a>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Animation
+        $(document).ready(function () {
+            function animateContent() {
+                $('.moving-container').animate({ marginLeft: '280%' }, 8000, 'linear', function () {
+
+                    $(this).css('margin-left', '-560%');
+                    setTimeout(animateContent, 1000); // Wait for 1 second before restarting the animation
+                });
+
+            }
+
+            // animateContent(); // Start the animation on page load
+        });
+    </script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

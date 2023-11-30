@@ -1,0 +1,15 @@
+﻿@model List<int>
+
+@{
+    ViewData["Title"] = "GetIDs";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<h2>Products Selected:</h2>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item</li>
+    }
+</ul>
